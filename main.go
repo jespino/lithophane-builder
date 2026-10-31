@@ -11,7 +11,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"litofany-builder/internal/lithophane"
+	"lithophane-builder/internal/lithophane"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 }
 
 func run(args []string, stdout, stderr io.Writer) error {
-	flags := flag.NewFlagSet("litofany-builder", flag.ContinueOnError)
+	flags := flag.NewFlagSet("lithophane-builder", flag.ContinueOnError)
 	flags.SetOutput(stderr)
 	input := flags.String("input", "", "source image (JPEG, PNG, or GIF; first frame)")
 	output := flags.String("output", "lithophane.stl", "destination binary STL file")
@@ -39,7 +39,7 @@ func run(args []string, stdout, stderr io.Writer) error {
 		return err
 	}
 	if *input == "" || flags.NArg() != 0 {
-		return fmt.Errorf("usage: litofany-builder -input photo.jpg [-output lithophane.stl]; use -help for options")
+		return fmt.Errorf("usage: lithophane-builder -input photo.jpg [-output lithophane.stl]; use -help for options")
 	}
 	if *output == "" {
 		return fmt.Errorf("output path must not be empty")

@@ -3,7 +3,7 @@
 Turn any photo into a 3D-printable **lithophane**: a thin plastic panel whose
 varying thickness reveals the picture when you hold it up to a light.
 
-`litofany-builder` is a dependency-free Go command-line tool that converts a
+`lithophane-builder` is a dependency-free Go command-line tool that converts a
 JPEG, PNG, or GIF image into a flat lithophane in binary STL format, ready to
 load into any slicer. Animated GIFs use their first frame.
 
@@ -50,8 +50,8 @@ go run . -input photo.jpg -output lithophane.stl
 Or build the executable:
 
 ```sh
-go build -o litofany-builder .
-./litofany-builder -input photo.png -output panel.stl -width 150 -step 0.3 -min-thickness 0.8 -max-thickness 3
+go build -o lithophane-builder .
+./lithophane-builder -input photo.png -output panel.stl -width 150 -step 0.3 -min-thickness 0.8 -max-thickness 3
 ```
 
 | Flag | Default | Meaning |
